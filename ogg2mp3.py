@@ -5,8 +5,8 @@ import os
 import subprocess
 from lang import lang
 
-media_folder = r'C:\Users\kchu\OfflineDocuments\OtherAPP\anki_userdata\main\collection.media'
-ffmpeg_path = r'C:\Users\kchu\Downloads\ffmpeg-6.0-essentials_build\bin\ffmpeg.exe'
+media_folder = r'C:\anki_userdata\main\collection.media'
+ffmpeg_path = r'C:\ffmpeg\bin\ffmpeg.exe'
 lang_code = 'Taiwanese' # 'Taiwanese' or 'Taiwanese_mandarin' or 'English'
 
 source_extension = '.ogg'
@@ -158,15 +158,17 @@ def get_schemas(nid = None):
     
 def user_confirmed(notes_schema):
     show_notes_in_anki(notes_schema)
-    user_say = input(color_text(lang[lang_code]['confirm']))
+    user_say = input(color_text(lang[lang_code]['confirm'])).lower()
     return True if user_say == 'delete' else False
     
 def main():
+    global lang_code
     while True:
-        checkAnki = input(color_text(lang[lang_code]['open_anki']))
+        checkAnki = input(color_text(lang[lang_code]['open_anki'])).lower()
         if checkAnki == 'yes':
             break
-            
+        if checkAnki == 'en':
+            lang_code = 'English'
     schemas = get_schemas()
     if len(schemas) == 0:
         print(color_text(lang[lang_code]['no_work'],color='g'))

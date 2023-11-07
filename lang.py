@@ -1,9 +1,9 @@
 lang = \
 {
     'Taiwanese' : {\
-        'open_anki':'請先共 anki 拍開，完成了後請輸入 yes ，揤 enter\n> ',
+        'open_anki':'請先共 anki 拍開，完成了後請輸入 yes ，揤 enter\nIf you want to switch to English, please type \'en\'.\n> ',
         'confirm': '請執行下底的三件代誌.\n\
-        1. 你的 anki 觀覽器(browser)應該已經佇背景開--開矣，請確認這馬瀏覽器顯示的卡片的音檔有滿意--無。\n\
+        1. 你的 anki 觀覽器(browser)應該已經佇背景開--開矣，請確認觀覽器顯示的卡片的音檔有滿意--無。\n\
         2. 共卡片瀏覽器關掉。若無關掉，轉檔過程可能會有問題。\n\
         3. 若準你對轉檔結果滿意，請輸入\'delete\'後揤 Enter。若是無滿意，請直接按 Enter。\n> ',
         'finish' : '鬥跤手任務完成，請共這个窗仔關掉！',
