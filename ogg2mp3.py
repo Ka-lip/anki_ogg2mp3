@@ -161,15 +161,18 @@ def user_confirmed(notes_schema):
     user_say = input(color_text(lang[lang_code]['confirm'])).lower()
     return True if user_say == 'delete' else False
     
-def main():
-    global lang_code
+def anki_open(lang_code = lang_code):
     while True:
         checkAnki = input(color_text(lang[lang_code]['open_anki'])).lower()
         if checkAnki == 'yes':
             break
         if checkAnki == 'en':
             lang_code = 'English'
-    schemas = get_schemas()
+    return lang_code
+
+def main():
+    lang_code = anki_open()
+    schemas   = get_schemas()
     if len(schemas) == 0:
         print(color_text(lang[lang_code]['no_work'],color='g'))
         return 0
